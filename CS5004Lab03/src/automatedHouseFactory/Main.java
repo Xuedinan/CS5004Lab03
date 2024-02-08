@@ -30,8 +30,8 @@ public class Main
 		
 		    switch(resource.getType())
 		    {
-		        case STONE: stoneBlockProducer.takeResource(resource); break;
-		        case WOOD: woodBlockProducer.takeResource(resource); break;
+			    case STONE: stoneBlockProducer.takeResource(resource); break;
+			    case WOOD: woodBlockProducer.takeResource(resource); break;
 		    }
 		
     		houseBlockProducer.takeResource(stoneBlockProducer.produce());

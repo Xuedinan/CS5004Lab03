@@ -2,34 +2,36 @@ package automatedHouseFactory;
 
 public abstract class Block extends Const {
 	
-	ResourceType type;
-	double weight;
+	static ResourceType type;
+	protected static double weight;
 	
 	
-	// set block number to 0
-	public abstract void breakBlock();
+	// return materials
+	public abstract Resource breakBlock();
 	
 	//constructor
 	public Block(ResourceType type, double weight) {
-		this.type = type;
+		Block.type = type;
 		this.weight = weight;
 	}
 	
-
+	// TODO double check weight
 	public Block(ResourceType type1, ResourceType type2) {
-		this.type = ResourceType.house;
+		Block.type = ResourceType.HOUSE;
 		this.weight = houseBlockCalculate(type1, type2);
 		
 	}
 	
-	
+	public Block() {
+	}
+
 	// helper method for house block calculation TODO exception and condition
 	private double houseBlockCalculate(ResourceType type1, ResourceType type2) {
 		
 		double result = 0;
 		
-		if (type1 != ResourceType.house && type2 != ResourceType.house) {
-			result = Const.stoneBlockWeight * Const.stoneBlockNumberHouse + Const.woodBlockWeight + Const.woodBlockNumberHouse; 
+		if (type1 != ResourceType.HOUSE && type2 != ResourceType.HOUSE) {
+			result = Const.aStoneBlockWeight * Const.stoneBlockNumberHouse + Const.aWoodBlockWeight + Const.woodBlockNumberHouse; 
 		}
 		
 		return result;
@@ -38,7 +40,7 @@ public abstract class Block extends Const {
 
 	// getters
 	
-	public ResourceType getType() {
+	public static ResourceType getType() {
 		return type;
 	}
 

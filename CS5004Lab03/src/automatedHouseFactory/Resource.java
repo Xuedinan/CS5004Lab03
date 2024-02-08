@@ -13,7 +13,6 @@ public class Resource {
 		this.type = type;
 	}
 
-	
 	// setters and getters
 	public double getWeight() {
 		return weight;
