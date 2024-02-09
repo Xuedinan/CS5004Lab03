@@ -4,8 +4,7 @@ public class WoodBlock extends Block{
 	
 	
 	public WoodBlock() {
-		this.type = ResourceType.WOOD;
-		this.weight = Const.aWoodBlockWeight;
+		super(ResourceType.WOOD, Const.aWoodBlockWeight);
 	}
 	
 	// TODO more check
@@ -13,7 +12,8 @@ public class WoodBlock extends Block{
 	@Override
 	public Resource breakBlock() {
 		
-		return new Resource(super.weight / 2, this.type);
+		return new Resource(Const.aWoodBlockWeight / 2, ResourceType.WOOD);
 	}
 
 }
+ 

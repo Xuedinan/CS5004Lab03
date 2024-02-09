@@ -1,9 +1,9 @@
 package automatedHouseFactory;
 
-public abstract class Block extends Const {
+public abstract class Block{
 	
 	static ResourceType type;
-	protected static double weight;
+	static double weight;
 	
 	
 	// return materials
@@ -12,35 +12,38 @@ public abstract class Block extends Const {
 	//constructor
 	public Block(ResourceType type, double weight) {
 		Block.type = type;
-		this.weight = weight;
+		Block.weight = weight;
 	}
 	
 	// TODO double check weight
-	public Block(ResourceType type1, ResourceType type2) {
+	public Block(Resource type1, Resource type2) {
 		Block.type = ResourceType.HOUSE;
-		this.weight = houseBlockCalculate(type1, type2);
+		Block.weight = houseBlockCalculate(type1, type2);
 		
 	}
-	
-	public Block() {
-	}
 
-	// helper method for house block calculation TODO exception and condition
-	private double houseBlockCalculate(ResourceType type1, ResourceType type2) {
+	// helper method for house block calculation TODO added exception
+	private double houseBlockCalculate(Resource type1, Resource type2) throws IllegalArgumentException{
 		
 		double result = 0;
 		
-		if (type1 != ResourceType.HOUSE && type2 != ResourceType.HOUSE) {
-			result = Const.aStoneBlockWeight * Const.stoneBlockNumberHouse + Const.aWoodBlockWeight + Const.woodBlockNumberHouse; 
+		if(type1.getType() instanceof ResourceType == false || type2.getType() instanceof ResourceType == false) {
+			throw new IllegalArgumentException("ResourceType is incorrect for Houseblock.\n");
+		}
+		
+		else if (type1.getType() != ResourceType.HOUSE || type2.getType() != ResourceType.HOUSE) {
+			 throw new IllegalArgumentException("ResourceType is incorrect for Houseblock.\n");
+		}
+		else {
+			result = Const.aStoneBlockWeight * Const.stoneBlockNumberHouse + Const.aWoodBlockWeight + Const.woodBlockNumberHouse;
 		}
 		
 		return result;
 	}
 
-
 	// getters
 	
-	public static ResourceType getType() {
+	public ResourceType getType() {
 		return type;
 	}
 

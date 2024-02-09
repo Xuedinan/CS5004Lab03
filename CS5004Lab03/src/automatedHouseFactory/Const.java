@@ -1,6 +1,6 @@
 package automatedHouseFactory;
 
-public class Const {
+public final class Const {
 	
 	static final double aStoneBlockWeight = 50;
 	static final double aWoodBlockWeight = 30;

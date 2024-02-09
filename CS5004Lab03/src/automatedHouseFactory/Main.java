@@ -54,6 +54,7 @@ public class Main
     		System.out.println();
     		
     		//pauses simulation for 2 seconds so it is visable
+    		
     		Thread.sleep(2000);
 		}
 	}

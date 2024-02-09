@@ -6,11 +6,10 @@ public class StoneBlock extends Block{
 		super(ResourceType.STONE, Const.aStoneBlockWeight);
 	}
 
-	// TODO condition check
 	@Override
 	public Resource breakBlock() {
 		
-		return new Resource(super.weight, this.type);
+		return new Resource(Const.aStoneBlockWeight, ResourceType.STONE);
 				
 	}
 

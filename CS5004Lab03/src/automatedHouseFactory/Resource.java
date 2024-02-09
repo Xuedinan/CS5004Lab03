@@ -13,32 +13,35 @@ public class Resource {
 		this.type = type;
 	}
 
-	// setters and getters
+	// getters
 	public double getWeight() {
 		return weight;
 	}
 
-	public void setWeight(double weight) {
-		this.weight = weight;
-	}
 
 	public ResourceType getType() {
 		return type;
 	}
 
-	public void setType(ResourceType type) {
-		this.type = type;
-	}
-	
-	
-	// add weight TODO add check condition, exception
-	public void addWeight(double amount) {
+	// add weight TODO add one more exception
+	public void addWeight(double amount) throws IllegalArgumentException {
+		if(amount < 0) {
+			throw new IllegalArgumentException("Added resource amount must be greater than 0.\n");
+		}
+		else {
 		this.weight = weight + amount;
+		}
 	}
+
 	
-	// subtract weight TODO add check condition, exception
+	// subtract weight
 	public void subWeight(double amount) {
+		if(weight < amount) {
+			throw new IllegalArgumentException("Subtract resource amount must be less than current resource weight.\n");
+		}
+		else {
 		this.weight = weight - amount;
+		}
 	}
-}	
-	
+}
+
