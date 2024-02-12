@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class HouseFactory<T> implements Factory {
 	
+	// two block bins
 	private double stoneBlockBin;
 	private double woodBlockBin;
 	
@@ -37,19 +38,19 @@ public class HouseFactory<T> implements Factory {
 		}
 	}
 
-	@Override
+	@Override // TODO extension
 	public Block produce() {
 		
 		// check if there is enough blocks
 		if(stoneBlockBin >= Const.stoneBlockNumberHouse && woodBlockBin >= Const.woodBlockNumberHouse) {
+
+			// when we have enough blocks, pass block to HouseBlock for constructor
+			blockArray.add(new StoneBlock());
+			blockArray.add(new WoodBlock());
 			
 			// subtract blocks to build house
 			stoneBlockBin -= Const.stoneBlockNumberHouse;
 			woodBlockBin -= Const.woodBlockNumberHouse;
-			
-			// when we have enough blocks, pass block to HouseBlock for constructor
-			blockArray.add(new StoneBlock());
-			blockArray.add(new WoodBlock());
 			
 			// use temp array list to store current array list and reset array list after each while loop
 			ArrayList<Block> temp = blockArray;

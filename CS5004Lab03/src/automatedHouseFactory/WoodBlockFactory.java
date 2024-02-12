@@ -3,10 +3,9 @@ package automatedHouseFactory;
 public class WoodBlockFactory implements Factory {	
 	
 	// raw wood material inventory
-//	private Resource wResourceBin = new Resource(0, ResourceType.WOOD);
-	
 	public double wResourceBin;
 	
+	// Constructor
 	public WoodBlockFactory() {};
 	
 	
@@ -30,8 +29,6 @@ public class WoodBlockFactory implements Factory {
 				}
 			 }
 		else {
-			
-			System.out.println("check if this is right");
 			throw new IllegalArgumentException("Resource for WoodBlockFactory is invalid.\n");
 		}
 	}
@@ -50,7 +47,7 @@ public class WoodBlockFactory implements Factory {
 			return new WoodBlock();
 		}
 		else {
-			return null; // TODO check with Jingjing
+			return null;
 		}
 	}
 
@@ -58,6 +55,5 @@ public class WoodBlockFactory implements Factory {
 	public void displayInventory() {
 		System.out.printf("%.1f\n", wResourceBin);
 	}
-
 
 }

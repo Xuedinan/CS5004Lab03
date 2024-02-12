@@ -3,10 +3,9 @@
 public class StoneBlockFactory implements Factory {
 	
 	// raw stone material inventory
-//	private Resource sResourceBin = new Resource(0, ResourceType.STONE);
-	
 	public double sResourceBin;
 	
+	// constructor
 	public StoneBlockFactory() {};
 	
 	
@@ -48,7 +47,7 @@ public class StoneBlockFactory implements Factory {
 			return new StoneBlock();
 		}
 		else {
-			return null; // TODO check with Jingjing
+			return null;
 		}
 	}
 

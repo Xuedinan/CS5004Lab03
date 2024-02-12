@@ -23,7 +23,7 @@ public class Resource {
 		return type;
 	}
 
-	// add weight TODO add one more exception
+	// add weight
 	public void addWeight(double amount) throws IllegalArgumentException {
 		if(amount < 0) {
 			throw new IllegalArgumentException("Added resource amount must be greater than 0.\n");

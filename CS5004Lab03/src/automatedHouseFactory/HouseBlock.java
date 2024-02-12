@@ -4,23 +4,18 @@ import java.util.ArrayList;
 
 public class HouseBlock<Blooean, blooean> extends Block {
 	
-	// build house with exception check for resource amount TODO check with Jingjing, take block instead of resource
-	
-	/*I think my thinking there was having to set up a generic type 
-	 * and then split it based on the block accepted or having to send it multiple blocks at once like an array list. 
-	 * If you think you have it set up to do this, go ahead and then claim it as an extension
-	*/
-	
+	// build house with exception check for resource amount
 	public HouseBlock(ArrayList<Block> blockArray) throws IllegalArgumentException {
 		super(blockArray);
-
+		
+		// user helper method to check if block array list is sufficient to build house
 		if(blockCheckForHouseBlockFactory(blockArray) != true) {
 			throw new IllegalArgumentException("Provided resource is insufficient to build HouseBlock.\n");
 		}
 	}
 	
 	
-	// helper method to check each block type and weight in the block array list TODO extension
+	// helper method to check each block type and weight in the block array list TODO extension for Resource check
 	
 	private boolean blockCheckForHouseBlockFactory(ArrayList<Block> blockArray) {
 		
@@ -33,16 +28,18 @@ public class HouseBlock<Blooean, blooean> extends Block {
 			
 			Block block = blockArray.get(i);
 			
-			// if block type is house then return false
+			// if block type is house then return false, make sure array list only has StoneBlock and WoodBlock
 			if(block.getType() == ResourceType.HOUSE) {
 				return false;
 			}
 			else if(
-					// check if block is wood and weight is sufficient then check stone weight below
+					// check if block is wood and weight is insufficient
 					block.getType() == ResourceType.WOOD && block.getWeight() < Const.woodBlockNumberHouse * Const.aWoodBlockWeight || block.getType() == ResourceType.STONE && block.getWeight() < Const.stoneBlockNumberHouse * Const.aStoneBlockWeight) {
 				return false;
 			}
 		}
+		
+		// ok to build house when all invalid case is not matched
 		return true;
 	}
 
