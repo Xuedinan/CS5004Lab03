@@ -1,10 +1,11 @@
 package automatedHouseFactory;
 
+import java.util.ArrayList;
+
 public abstract class Block{
 	
 	static ResourceType type;
 	static double weight;
-	
 	
 	// return materials
 	public abstract Resource breakBlock();
@@ -15,29 +16,43 @@ public abstract class Block{
 		Block.weight = weight;
 	}
 	
-	// TODO double check weight
-	public Block(Resource type1, Resource type2) {
-		Block.type = ResourceType.HOUSE;
-		Block.weight = houseBlockCalculate(type1, type2);
-		
+	// TODO double check weight, array list extension
+	public Block(ArrayList<Block> blockArray) {
+		for(int j = 0; j < blockArray.size(); j++) {
+		    
+	    switch(blockArray.get(j).getType())
+	        {
+            	case HOUSE: Block.type = ResourceType.HOUSE; break;
+	            case STONE: Block.type = ResourceType.STONE; break;
+	            case WOOD: Block.type = ResourceType.WOOD; break;
+	        }
+		}
+		Block.weight = houseBlockCalculate(blockArray);
 	}
 
 	// helper method for house block calculation TODO added exception
-	private double houseBlockCalculate(Resource type1, Resource type2) throws IllegalArgumentException{
+	private double houseBlockCalculate(ArrayList<Block> blockArray) throws IllegalArgumentException{
 		
 		double result = 0;
 		
-		if(type1.getType() instanceof ResourceType == false || type2.getType() instanceof ResourceType == false) {
-			throw new IllegalArgumentException("ResourceType is incorrect for Houseblock.\n");
-		}
+		for(int i = 0; i < blockArray.size(); i++) {
 		
-		else if (type1.getType() != ResourceType.HOUSE || type2.getType() != ResourceType.HOUSE) {
-			 throw new IllegalArgumentException("ResourceType is incorrect for Houseblock.\n");
+			// check if block type is in the resource type
+			if(blockArray.get(i).getType() instanceof ResourceType == false) {
+				throw new IllegalArgumentException("ResourceType is incorrect for Houseblock.\n");
+			}
+			
+			// check if block type is in the house type
+			else if (blockArray.get(i).getType() == ResourceType.HOUSE) {
+				 throw new IllegalArgumentException("ResourceType is incorrect for Houseblock.\n");
+			}
+			else {
+				
+				// return the total weight (wood + stone) for a house
+				// TODO one more resource
+				result = Const.aStoneBlockWeight * Const.stoneBlockNumberHouse + Const.aWoodBlockWeight * Const.woodBlockNumberHouse;
+			}
 		}
-		else {
-			result = Const.aStoneBlockWeight * Const.stoneBlockNumberHouse + Const.aWoodBlockWeight + Const.woodBlockNumberHouse;
-		}
-		
 		return result;
 	}
 
@@ -54,6 +69,10 @@ public abstract class Block{
 	@Override
 	public String toString() {
 		return "Type: " + type + ", " + "Weight: " + weight;
+		
+	}
+
+	public void displayInventory() {
 		
 	}
 }

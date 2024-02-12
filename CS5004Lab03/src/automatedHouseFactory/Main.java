@@ -1,4 +1,4 @@
-
+package automatedHouseFactory;
 import java.util.Random;
 import java.lang.Math;
 
@@ -33,7 +33,7 @@ public class Main
 			    case STONE: stoneBlockProducer.takeResource(resource); break;
 			    case WOOD: woodBlockProducer.takeResource(resource); break;
 		    }
-		
+		    
     		houseBlockProducer.takeResource(stoneBlockProducer.produce());
     		houseBlockProducer.takeResource(woodBlockProducer.produce());
     		
@@ -73,7 +73,7 @@ public class Main
 	            case 0: type = ResourceType.STONE; break;
 	            case 1: type = ResourceType.WOOD; break;
 	        }
-	        
+	    
 	   return new Resource(weight, type);
 	}
 }

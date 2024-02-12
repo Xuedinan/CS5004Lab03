@@ -6,7 +6,6 @@ public interface Factory {
 	
 	public Block produce();
 	
-	public Object displayInventory();
-	
+	public void displayInventory();
 	
 }
