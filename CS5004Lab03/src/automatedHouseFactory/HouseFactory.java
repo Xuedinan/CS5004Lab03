@@ -94,8 +94,8 @@ public class HouseFactory<T> implements Factory {
 
 	@Override
 	public void displayInventory() {
-		System.out.printf("Stone Block: %.1f\n", stoneBlockBin);
-		System.out.printf("Wood Block: %.1f\n", woodBlockBin);
-		System.out.printf("Concrete Block: %.1f\n", concreteBlockBin);
+		System.out.printf("Stone Block: %.1f  Max number is: %.1f\n", stoneBlockBin, Const.maxStoneBlockNumber);
+		System.out.printf("Wood Block: %.1f  Max number is: %.1f\n", woodBlockBin, Const.maxWoodBlockNumber);
+		System.out.printf("Concrete Block: %.1f  Max number is: %.1f\n", concreteBlockBin, Const.maxConcreteBlockNumber);
 	}
 }

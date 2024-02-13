@@ -50,7 +50,9 @@ public abstract class Block{
 				
 				// return the total weight (wood + stone) for a house
 				// TODO one more resource
-				result = Const.aStoneBlockWeight * Const.stoneBlockNumberHouse + Const.aWoodBlockWeight * Const.woodBlockNumberHouse;
+				result = Const.aStoneBlockWeight * Const.stoneBlockNumberHouse + 
+						Const.aWoodBlockWeight * Const.woodBlockNumberHouse + 
+						Const.aConcreteBlockWeight * Const.concreteBlockNumberHouse;
 			}
 		}
 		return result;
