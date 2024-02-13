@@ -18,11 +18,7 @@ public class HouseBlock<Blooean, blooean> extends Block {
 	// helper method to check each block type and weight in the block array list TODO extension for Resource check
 	
 	private boolean blockCheckForHouseBlockFactory(ArrayList<Block> blockArray) {
-		
-		for(int j = 0; j < blockArray.size(); j++) {
-			System.out.println("HouseBlock insdie + " + blockArray.get(j));
-		}
-		
+
 		// get each block in block array list
 		for(int i = 0; i < blockArray.size(); i++) {
 			
@@ -34,7 +30,9 @@ public class HouseBlock<Blooean, blooean> extends Block {
 			}
 			else if(
 					// check if block is wood and weight is insufficient
-					block.getType() == ResourceType.WOOD && block.getWeight() < Const.woodBlockNumberHouse * Const.aWoodBlockWeight || block.getType() == ResourceType.STONE && block.getWeight() < Const.stoneBlockNumberHouse * Const.aStoneBlockWeight) {
+					block.getType() == ResourceType.WOOD && block.getWeight() < Const.woodBlockNumberHouse * Const.aWoodBlockWeight || 
+					block.getType() == ResourceType.STONE && block.getWeight() < Const.stoneBlockNumberHouse * Const.aStoneBlockWeight ||
+					block.getType() == ResourceType.CONCRETE && block.getWeight() < Const.concreteBlockNumberHouse * Const.aConcreteBlockWeight) {
 				return false;
 			}
 		}
@@ -45,7 +43,7 @@ public class HouseBlock<Blooean, blooean> extends Block {
 
 	
 	
-	@Override // return total weight wood for a house
+	@Override // return total weight wood for a house only
 	public Resource breakBlock() {
 		
 		return new Resource(Const.woodBlockNumberHouse * Const.aWoodBlockWeight, ResourceType.WOOD);

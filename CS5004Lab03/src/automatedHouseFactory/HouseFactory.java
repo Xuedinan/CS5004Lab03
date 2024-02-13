@@ -4,12 +4,13 @@ import java.util.ArrayList;
 
 public class HouseFactory<T> implements Factory {
 	
-	// two block bins
+	// three block bins
 	private double stoneBlockBin;
 	private double woodBlockBin;
+	private double concreteBlockBin;
 	
 	// create block array list for HouseBlock constructor
-	public ArrayList<Block> blockArray = new ArrayList<>(2);
+	public ArrayList<Block> blockArray = new ArrayList<>(3);
 
 	@Override
 	public void takeResource(Object resource) throws IllegalArgumentException{
@@ -30,10 +31,30 @@ public class HouseFactory<T> implements Factory {
 			
 			// check if this is stone block or wood block, then add weight into block bin
 			if(castblock.getType() == ResourceType.STONE) {
-				stoneBlockBin += castblock.getWeight();
+				
+				// check if stone block bin reach out to max block number
+				if(stoneBlockBin + castblock.getWeight() > Const.maxStoneBlockNumber) {
+					stoneBlockBin = Const.maxStoneBlockNumber;
+				}
+				else{stoneBlockBin += castblock.getWeight();}
+				
 			}
 			else if(castblock.getType() == ResourceType.WOOD) {
-				woodBlockBin += castblock.getWeight();
+				
+				// check if wood block bin reach out to max block number
+				if(woodBlockBin + castblock.getWeight() > Const.maxWoodBlockNumber) {
+					woodBlockBin = Const.maxWoodBlockNumber;
+				}
+				else {woodBlockBin += castblock.getWeight();}
+			}
+			
+			else if(castblock.getType() == ResourceType.CONCRETE) {
+				
+				// check if concrete block bin reach out to max block number
+				if(concreteBlockBin + castblock.getWeight() > Const.maxConcreteBlockNumber) {
+					concreteBlockBin = Const.maxConcreteBlockNumber;
+				}
+				else {concreteBlockBin += castblock.getWeight();}
 			}
 		}
 	}
@@ -42,15 +63,20 @@ public class HouseFactory<T> implements Factory {
 	public Block produce() {
 		
 		// check if there is enough blocks
-		if(stoneBlockBin >= Const.stoneBlockNumberHouse && woodBlockBin >= Const.woodBlockNumberHouse) {
+		if(stoneBlockBin >= Const.stoneBlockNumberHouse && 
+				woodBlockBin >= Const.woodBlockNumberHouse &&
+				concreteBlockBin >= Const.concreteBlockNumberHouse) {
 
 			// when we have enough blocks, pass block to HouseBlock for constructor
 			blockArray.add(new StoneBlock());
 			blockArray.add(new WoodBlock());
+			blockArray.add(new ConcreteBlock());
+			
 			
 			// subtract blocks to build house
 			stoneBlockBin -= Const.stoneBlockNumberHouse;
 			woodBlockBin -= Const.woodBlockNumberHouse;
+			concreteBlockBin -= Const.concreteBlockNumberHouse;
 			
 			// use temp array list to store current array list and reset array list after each while loop
 			ArrayList<Block> temp = blockArray;
@@ -69,6 +95,7 @@ public class HouseFactory<T> implements Factory {
 	@Override
 	public void displayInventory() {
 		System.out.printf("Stone Block: %.1f\n", stoneBlockBin);
-		System.out.printf("Wood Block: %.1f\n ", woodBlockBin);
+		System.out.printf("Wood Block: %.1f\n", woodBlockBin);
+		System.out.printf("Concrete Block: %.1f\n", concreteBlockBin);
 	}
 }

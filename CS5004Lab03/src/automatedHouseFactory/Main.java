@@ -19,6 +19,7 @@ public class Main
 		
 		Factory stoneBlockProducer = new StoneBlockFactory();
 		Factory woodBlockProducer = new WoodBlockFactory();
+		Factory concreteBlockProducer = new ConcreteBlockFactory();
 		Factory houseBlockProducer = new HouseFactory();
 		
 		Block h1;
@@ -32,10 +33,12 @@ public class Main
 		    {
 			    case STONE: stoneBlockProducer.takeResource(resource); break;
 			    case WOOD: woodBlockProducer.takeResource(resource); break;
+			    case CONCRETE: concreteBlockProducer.takeResource(resource); break;
 		    }
 		    
     		houseBlockProducer.takeResource(stoneBlockProducer.produce());
     		houseBlockProducer.takeResource(woodBlockProducer.produce());
+    		houseBlockProducer.takeResource(concreteBlockProducer.produce());
     		
     		h1 = houseBlockProducer.produce();
     		
@@ -48,6 +51,8 @@ public class Main
     		stoneBlockProducer.displayInventory();
     		System.out.println("Wood Producer");
     		woodBlockProducer.displayInventory();
+    		System.out.println("Concrete Producer");
+    		concreteBlockProducer.displayInventory();
     		System.out.println("House Producer");
     		houseBlockProducer.displayInventory();
     		
@@ -66,12 +71,13 @@ public class Main
 	  
 	    ResourceType type = ResourceType.STONE;
 	    double weight = Math.round((Math.abs(r.nextDouble()))*100.0)/10.0 ;
-	    int select = r.nextInt(2);
+	    int select = r.nextInt(3);
 	    
 	    switch(select)
 	        {
 	            case 0: type = ResourceType.STONE; break;
 	            case 1: type = ResourceType.WOOD; break;
+	            case 2: type = ResourceType.CONCRETE; break;
 	        }
 	    
 	   return new Resource(weight, type);

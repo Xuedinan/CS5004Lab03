@@ -1,6 +1,6 @@
 package automatedHouseFactory;
 
 public enum ResourceType {
-	STONE, WOOD, HOUSE;
+	STONE, WOOD, CONCRETE, HOUSE;
 
 }
