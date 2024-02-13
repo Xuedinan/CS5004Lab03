@@ -60,7 +60,7 @@ public class HouseFactory<T> implements Factory {
 	}
 
 	@Override // TODO extension
-	public Block produce() {
+	public HouseBlock produce() {
 		
 		// check if there is enough blocks
 		if(stoneBlockBin >= Const.stoneBlockNumberHouse && 
