@@ -3,14 +3,12 @@ import java.util.Random;
 import java.lang.Math;
 
 /*
-Driver file for Automated House Factory Assignment
-
-This file will not work until assignment has been completely implmented. 
-
-6/21/2022
--Dr. G
+	Name: Xuedinan Gao
+	Course: CS 5004
+	Semester: Spring 2024
 
 */
+
 public class Main
 {
 	public static void main(String[] args) throws InterruptedException {
@@ -92,7 +90,8 @@ public class Main
 	            case 1: type = ResourceType.WOOD; break;
 	            case 2: type = ResourceType.CONCRETE; break;
 	        }
-	    
+	   
+	   // return new resource with weight and type
 	   return new Resource(weight, type);
 	}
 }

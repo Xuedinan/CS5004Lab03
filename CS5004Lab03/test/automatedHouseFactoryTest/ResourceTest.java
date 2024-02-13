@@ -7,6 +7,12 @@ import org.junit.Test;
 import automatedHouseFactory.Resource;
 import automatedHouseFactory.ResourceType;
 
+/*
+Name: Xuedinan Gao
+Course: CS 5004
+Semester: Spring 2024
+*/
+
 public class ResourceTest {
 	
 	
@@ -17,6 +23,7 @@ public class ResourceTest {
 	@Test
 	public void getTest() {
 		
+		// test if getter and constructor are work
 		assertEquals(10, test1.getWeight(), 0.01);
 		assertEquals(20, test2.getWeight(), 0.01);
 		assertEquals(ResourceType.STONE, test1.getType());
@@ -26,6 +33,7 @@ public class ResourceTest {
 	@Test
 	public void addWeightTest() {
 		
+		// add weight then test
 		test1.addWeight(10);
 		test2.addWeight(10);
 		
@@ -37,6 +45,7 @@ public class ResourceTest {
 	@Test
 	public void subWeightTest() {
 		
+		// sub weight then test
 		test1.subWeight(3);
 		test2.subWeight(5);
 		

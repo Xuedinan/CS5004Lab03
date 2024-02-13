@@ -1,6 +1,10 @@
 package automatedHouseFactory;
 
 /*
+ *	Name: Xuedinan Gao
+ *	Course: CS 5004
+ *	Semester: Spring 2024
+ *
  * My driver testing will follow below work-flow
  * 
  * 1. create three type resources
@@ -14,7 +18,6 @@ package automatedHouseFactory;
  * 9. try to build house
  * 10. if blocks are not enough, add more block then produce
  * 11. break house check what be returned
- * 
  * 
  */
 

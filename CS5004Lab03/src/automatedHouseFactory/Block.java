@@ -2,6 +2,13 @@ package automatedHouseFactory;
 
 import java.util.ArrayList;
 
+/*
+Name: Xuedinan Gao
+Course: CS 5004
+Semester: Spring 2024
+
+*/
+
 public abstract class Block{
 	
 	static ResourceType type;

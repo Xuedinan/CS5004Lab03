@@ -1,5 +1,11 @@
 package automatedHouseFactory;
 
+/*
+Name: Xuedinan Gao
+Course: CS 5004
+Semester: Spring 2024
+*/
+
 public class WoodBlock extends Block{
 	
 	// create wood block with constants

@@ -9,6 +9,12 @@ import automatedHouseFactory.WoodBlockFactory;
 import automatedHouseFactory.Resource;
 import automatedHouseFactory.ResourceType;
 
+/*
+Name: Xuedinan Gao
+Course: CS 5004
+Semester: Spring 2024
+*/
+
 public class WoodBlockFactoryTest {
 	
 	WoodBlockFactory wbf = new WoodBlockFactory();

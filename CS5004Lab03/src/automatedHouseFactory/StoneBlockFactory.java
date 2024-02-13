@@ -1,4 +1,10 @@
  package automatedHouseFactory;
+ 
+ /*
+ Name: Xuedinan Gao
+ Course: CS 5004
+ Semester: Spring 2024
+ */
 
 public class StoneBlockFactory implements Factory {
 	

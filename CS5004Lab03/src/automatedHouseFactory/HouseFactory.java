@@ -2,6 +2,12 @@ package automatedHouseFactory;
 
 import java.util.ArrayList;
 
+/*
+Name: Xuedinan Gao
+Course: CS 5004
+Semester: Spring 2024
+*/
+
 public class HouseFactory<T> implements Factory {
 	
 	// three block bins

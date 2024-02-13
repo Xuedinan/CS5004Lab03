@@ -2,6 +2,12 @@ package automatedHouseFactory;
 
 import java.util.ArrayList;
 
+/*
+Name: Xuedinan Gao
+Course: CS 5004
+Semester: Spring 2024
+*/
+
 public class HouseBlock<Blooean, blooean> extends Block {
 	
 	// build house with exception check for resource amount

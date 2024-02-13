@@ -1,5 +1,11 @@
 package automatedHouseFactory;
 
+/*
+Name: Xuedinan Gao
+Course: CS 5004
+Semester: Spring 2024
+*/
+
 public class ConcreteBlock extends Block{
 	
 	// create stone block with constants

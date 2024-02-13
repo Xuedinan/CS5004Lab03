@@ -9,6 +9,12 @@ import automatedHouseFactory.ConcreteBlockFactory;
 import automatedHouseFactory.Resource;
 import automatedHouseFactory.ResourceType;
 
+/*
+Name: Xuedinan Gao
+Course: CS 5004
+Semester: Spring 2024
+*/
+
 public class ConcreteBlockFactoryTest {
 	
 	ConcreteBlockFactory cbf = new ConcreteBlockFactory();
