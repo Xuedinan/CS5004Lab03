@@ -18,11 +18,11 @@ Semester: 2024 Spring
 - New resource type, Concrete
   - New concrete block
   - New concrete block factory
-  - 
+    
 - Using ArrayList to store blocks
 - Set capacity for each block inventory
 - New completely different driver
   - Test breakBlock inside the driver
-  - 
+
 - Create some JUnit tests
 - Add more exception handling for methods that take argument
