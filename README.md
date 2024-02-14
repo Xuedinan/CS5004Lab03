@@ -25,9 +25,11 @@ Semester: 2024 Spring
   - Test breakBlock inside the driver
 
 - Create some JUnit tests
+- Add comment in each class
 - Add more exception handling for methods that take argument
 
 ### My test case is in the NewDriver Class
+
 My driver testing will follow the below work-flow
 1. create three types of resources
 2. create three block factory
