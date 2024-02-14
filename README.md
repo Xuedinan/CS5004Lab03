@@ -13,14 +13,16 @@ Semester: 2024 Spring
 - FactoryTest, Resource Test classes
   ![image](https://github.com/Xuedinan/CS5004Lab03/assets/144306521/0d23f1a0-dae4-4f45-a8cc-6fc59030506c)
 
-In addition to requested method, I have extensions below
+### In addition to the requested method, I have extensions below
 
 - New resource type, Concrete
   - New concrete block
-  - New concrete block factory 
+  - New concrete block factory
+  - 
 - Using ArrayList to store blocks
 - Set capacity for each block inventory
 - New completely different driver
   - Test breakBlock inside the driver
+  - 
 - Create some JUnit tests
 - Add more exception handling for methods that take argument
