@@ -65,7 +65,7 @@ public class HouseFactory<T> implements Factory {
 		}
 	}
 
-	@Override // TODO extension
+	@Override //
 	public HouseBlock produce() {
 		
 		// check if there is enough blocks

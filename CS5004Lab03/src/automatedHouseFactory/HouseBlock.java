@@ -21,7 +21,7 @@ public class HouseBlock<Blooean, blooean> extends Block {
 	}
 	
 	
-	// helper method to check each block type and weight in the block array list TODO extension for Resource check
+	// helper method to check each block type and weight in the block array list
 	
 	private boolean blockCheckForHouseBlockFactory(ArrayList<Block> blockArray) {
 

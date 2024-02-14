@@ -4,21 +4,21 @@ package automatedHouseFactory;
  *	Name: Xuedinan Gao
  *	Course: CS 5004
  *	Semester: Spring 2024
- *
- * My driver testing will follow below work-flow
- * 
- * 1. create three type resources
- * 2. create three block factory
- * 3. create one house factory
- * 4. add weight, subtract weight to all resources 
- * 5. product blocks for each resource
- * 6. break blocks
- * 7. receive returned resource
- * 8. transfer returned resource to block factories
- * 9. try to build house
- * 10. if blocks are not enough, add more block then produce
- * 11. break house check what be returned
- * 
+ 
+	My driver testing will follow below work-flow
+	
+	1. create three types of resources
+	2. create three block factory
+	3. create a house factory
+	4. add weight, subtract weight from all resources 
+	5. product blocks for each resource
+	6. break blocks
+	7. receive returned resource
+	8. transfer returned resources to block factories
+	9. try to build the house
+	10. if blocks are not enough, add more blocks then produce
+	11. break house check what be returned
+	  
  */
 
 public class NewDriver {

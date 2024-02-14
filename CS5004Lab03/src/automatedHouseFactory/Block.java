@@ -6,7 +6,6 @@ import java.util.ArrayList;
 Name: Xuedinan Gao
 Course: CS 5004
 Semester: Spring 2024
-
 */
 
 public abstract class Block{
@@ -23,7 +22,7 @@ public abstract class Block{
 		Block.weight = weight;
 	}
 	
-	// TODO double check weight, array list extension
+	// check each element in block array list then create block accordingly
 	public Block(ArrayList<Block> blockArray) {
 		for(int j = 0; j < blockArray.size(); j++) {
 		    
@@ -37,7 +36,7 @@ public abstract class Block{
 		Block.weight = houseBlockCalculate(blockArray);
 	}
 
-	// helper method for house block calculation TODO added exception
+	// helper method for house block calculation
 	private double houseBlockCalculate(ArrayList<Block> blockArray) throws IllegalArgumentException{
 		
 		double result = 0;
@@ -55,8 +54,7 @@ public abstract class Block{
 			}
 			else {
 				
-				// return the total weight (wood + stone) for a house
-				// TODO one more resource
+				// return the total weight (wood + stone + concrete) for a house
 				result = Const.aStoneBlockWeight * Const.stoneBlockNumberHouse + 
 						Const.aWoodBlockWeight * Const.woodBlockNumberHouse + 
 						Const.aConcreteBlockWeight * Const.concreteBlockNumberHouse;
