@@ -26,3 +26,19 @@ Semester: 2024 Spring
 
 - Create some JUnit tests
 - Add more exception handling for methods that take argument
+
+### My test case is in the NewDriver Class
+
+ * My driver testing will follow below work-flow
+ * 
+ * 1. create three type resources
+ * 2. create three block factory
+ * 3. create one house factory
+ * 4. add weight, subtract weight to all resources 
+ * 5. product blocks for each resource
+ * 6. break blocks
+ * 7. receive returned resource
+ * 8. transfer returned resource to block factories
+ * 9. try to build house
+ * 10. if blocks are not enough, add more block then produce
+ * 11. break house check what be returned
